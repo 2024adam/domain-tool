@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI-powered domain name generator with real-time availability checking." />
+  <title>Nebula · AI Domain Name Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background layers -->
+  <div class="bg-layer">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark">◆</span>
+      <span class="logo-text">Nebula</span>
+    </div>
+    <div class="header-badge">
+      <span class="dot"></span>
+      Powered by AI
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-chip">✦ AI DOMAIN FINDER</div>
+      <h1>
+        Find your <span class="gradient-text">perfect domain</span><br />
+        in seconds.
+      </h1>
+      <p class="sub">
+        Describe your idea. Our AI invents brandable names, then checks real-time availability across extensions.
+      </p>
+    </section>
+
+    <!-- Search form -->
+    <form id="form" class="search-card">
+      <div class="input-group">
+        <label for="kw" class="input-label">Your idea</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔍</span>
+          <input
+            id="kw"
+            placeholder="e.g. coffee subscription for busy people"
+            autocomplete="off"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group half">
+          <label for="style" class="input-label">Naming style</label>
+          <div class="select-wrap">
+            <select id="style">
+              <option value="brandable">Brandable · Spotify-like</option>
+              <option value="short">Short · Figma-like</option>
+              <option value="compound">Compound · Mailchimp-like</option>
+              <option value="keyword">Keyword-based</option>
+              <option value="playful">Playful & fun</option>
+            </select>
+            <span class="select-chevron">▾</span>
+          </div>
+        </div>
+
+        <div class="input-group half">
+          <label class="input-label">Extensions</label>
+          <div id="tldPicker" class="tlds"></div>
+        </div>
+      </div>
+
+      <button type="submit" id="go" class="cta">
+        <span class="cta-text">Generate names</span>
+        <span class="cta-spinner" aria-hidden="true"></span>
+        <span class="cta-arrow">→</span>
+      </button>
+
+      <div class="form-hint">
+        <span>⚡ ~5 sec per search</span>
+        <span>·</span>
+        <span>💯 Free to use</span>
+      </div>
+    </form>
+
+    <!-- Status -->
+    <div id="status" class="status"></div>
+
+    <!-- Results -->
+    <section id="resultsWrap" class="results-wrap" hidden>
+      <div class="results-header">
+        <h2>Suggested names</h2>
+        <span id="resultCount" class="result-count"></span>
+      </div>
+      <ul id="results" class="results"></ul>
+    </section>
+
+    <!-- Empty state -->
+    <div id="empty" class="empty">
+      <div class="empty-icon">✦</div>
+      <p class="empty-title">Ready when you are</p>
+      <p class="empty-sub">Enter a keyword above and hit Generate.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Names are suggestions · Availability checked via RDAP · Purchase via registrar</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
